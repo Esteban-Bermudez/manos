@@ -1,42 +1,70 @@
 # MANOS — tu mano en KWENCH
 
-Hats, not software. A paper hat says who is free to help right now.
+A help board for coworking spaces. Members who know how to help become
+**manos** (Spanish for "hand"). A front-desk manager like Morgan sees who is
+free right now and calls them over.
 
-MANOS was built for AI Build Night #002. It is a clickable, local-only
-prototype: a coworking front desk can see who is free and call them over,
-and the helper's paper hat is the real-world signal.
+Built for AI Build Night #002 as a clickable, local-only prototype.
 
-## The idea
+## Why it exists
 
 At 1:55 p.m., a member's slides won't show in the workshop room. The
-front-desk manager needs someone now, but doesn't want to interrupt the
-whole space or chase people through group chats.
+manager needs someone now, without interrupting the whole space, chasing
+people through group chats, or waiting on replies.
 
-- **Hat on = free. Hat off = busy.** Anyone in the room can see it from
-  across the space, with no device and no login.
-- **The printed hat carries the signal.** It has a name, skill categories,
-  and a Ko-fi QR code that is visible once folded.
-- **The app only mirrors the hat.** A helper sets I'm free / I'm busy to
-  match what they're wearing. If the app and the hat disagree, the manager
-  checks in person.
-- **The manager dispatches.** The Desk shows a list of helpers, online
-  first. The manager clicks a person and calls them over. Members never
-  need a device.
-- **Pricing is simple.** KWENCH pays the mano 10¢ per minute, capped at
-  $2 per hand. The member pays nothing. An optional tip goes 100% to the
-  mano through their Ko-fi.
+MANOS gets that person to the desk faster:
+
+- The manager sees a list of manos, **online first**.
+- Clicking a name calls that person over. There is no ping, no queue, and no
+  waiting for a reply.
+- Each mano sets their own availability, skills, and rate.
+
+## The paper hat: a supplement to MANOS
+
+The app is the main tool. The paper hat is the physical version of the same
+signal, and it makes response faster still.
+
+- **Hat on = free. Hat off = busy.**
+- A manager can **scan the room** and see who is wearing a hat. No device,
+  no login, and no ping. The hat does the first step of the search before
+  the app is opened.
+- The app mirrors the hat. The hat is the source of truth. If the app and the
+  hat disagree, the manager checks in person.
+
+Each mano can print their own hat from the **Hat** tab. It shows:
+
+- their **name**
+- a **Ko-fi QR code** for an optional thank-you tip, visible when folded
+- what they **help with**, as skill categories (Screens, Wi-Fi, Printing,
+  Design)
+
+Fold instructions are on the same page.
 
 ## Pages
 
-| Tab   | Who uses it     | What it does                                                   |
-|-------|-----------------|----------------------------------------------------------------|
-| Desk  | KWENCH manager  | List of helpers: online first, then offline. Click to call over. |
-| Mano  | The helper      | I'm free / I'm busy, ping opt-in, rate, Ko-fi, complete a hand, tip QR. |
-| Hat   | The helper      | Printable hat sheet with fold instructions.                    |
+| Tab   | Who uses it     | What it does |
+|-------|-----------------|--------------|
+| Desk  | KWENCH manager  | List of manos, online first, then offline. Click a name to call them over. Each row shows skills and rate. |
+| Mano  | The helper      | Set I'm free / I'm busy, ping opt-in, skills, rate, Ko-fi link, complete a hand, and tip QR. |
+| Hat   | The helper      | Print your hat with name, QR, skill categories, and fold instructions. |
+
+### Screenshots
+
+| Desk (manager) | Mano (helper) | Hat (printable) |
+|----------------|---------------|-----------------|
+| ![Desk](docs/screenshots/desk.png) | ![Mano](docs/screenshots/mano.png) | ![Hat](docs/screenshots/hat.png) |
+
+## Money
+
+- KWENCH pays the mano **10¢ per minute, capped at $2 per hand**.
+- The member pays nothing.
+- An optional tip goes 100% to the mano through their Ko-fi.
+
+These are demo numbers. Nothing is charged in the app.
 
 ## Run it
 
-Requires [mise](https://mise.jdx.dev) (Bun is pinned in `mise.toml`).
+Requires [mise](https://mise.jdx.dev). Bun is pinned in `mise.toml`.
 
 ```bash
 mise install
@@ -46,8 +74,8 @@ bun run build      # writes dist/index.html
 open dist/index.html
 ```
 
-`dist/index.html` is a single self-contained file. It works from disk with
-no server.
+`dist/index.html` is a single self-contained file. It works from disk with no
+server.
 
 ## Stack
 
@@ -58,13 +86,12 @@ no server.
 
 ## Demo notes
 
-- Everything is local. State lives in `localStorage`. Use **Reset demo**
-  in the footer to start over.
+- Everything is local. State lives in `localStorage`. Use **Reset demo** in
+  the footer to start over.
 - Payments, pings, and call-overs are simulated. No money moves and no
   notifications are sent.
-- The Ko-fi QR is real. Scanning it opens the Ko-fi URL configured for
-  the mano.
-- Public areas only. No private rooms, no stored payment data.
+- The Ko-fi QR is real. Scanning it opens the Ko-fi URL set for the mano.
+- Public areas only. No private rooms and no stored payment data.
 
 ## Status
 
