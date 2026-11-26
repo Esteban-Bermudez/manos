@@ -1,0 +1,219 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: pastel --default;
+  logs: false;
+}
+
+@layer base {
+  body {
+    @apply bg-base-200 text-base-content antialiased;
+  }
+}
+
+/* The printable origami hat is the only screen-hidden artefact. */
+#print-card {
+  display: none;
+}
+
+/* The screen preview of the paper hat, which daisyUI has no component for. */
+.hat-preview {
+  @apply flex flex-col gap-0.5 rounded-box border border-dashed p-4;
+}
+.hat-preview.free {
+  @apply border-success/40 bg-success/10 text-success-content;
+}
+.hat-preview.busy {
+  @apply border-warning/50 bg-warning/15 text-warning-content;
+}
+.hat-preview > span {
+  @apply text-[0.6rem] font-black tracking-[0.14em] uppercase opacity-70;
+}
+.hat-preview > strong {
+  @apply font-serif text-3xl tracking-wide;
+}
+.hat-preview > small {
+  @apply text-xs opacity-80;
+}
+
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 9mm;
+  }
+  html,
+  body {
+    width: auto;
+    min-height: 0;
+    background: white !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  #app-shell,
+  .modal,
+  .toast {
+    display: none !important;
+  }
+  #print-card {
+    display: block !important;
+    color: #25352f;
+  }
+  .hat-sheet {
+    display: flex;
+    flex-direction: column;
+    gap: 5mm;
+    height: 279mm;
+    break-after: page;
+  }
+  .hat-sheet:last-child {
+    break-after: auto;
+  }
+  .hat-kicker {
+    display: flex;
+    justify-content: space-between;
+    gap: 8mm;
+    color: #6b756d;
+    font-family: Arial, sans-serif;
+    font-size: 7.5pt;
+    font-weight: 800;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .hat-face {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 12mm;
+    border: 0.7mm dashed #a9b3a4;
+    border-radius: 4mm;
+  }
+  .hat-free .hat-face {
+    color: #24493d;
+    background: #edf3e7;
+  }
+  .hat-status {
+    display: flex;
+    align-items: center;
+    gap: 3mm;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 46pt;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height: 1;
+  }
+  .hat-status span {
+    width: 7mm;
+    height: 7mm;
+    background: currentColor;
+    border-radius: 50%;
+  }
+  .hat-invite {
+    margin: 3mm 0 0;
+    font-family: Georgia, serif;
+    font-size: 15pt;
+    opacity: 0.85;
+  }
+  .hat-face h2 {
+    margin: 10mm 0 3mm;
+    font-family: Georgia, serif;
+    font-size: 30pt;
+    font-weight: 600;
+  }
+  .hat-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2mm;
+  }
+  .hat-skills span {
+    padding: 1.6mm 3.4mm;
+    border: 0.4mm solid currentColor;
+    border-radius: 2mm;
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    font-weight: 800;
+  }
+  .hat-qr-row {
+    display: flex;
+    align-items: center;
+    gap: 7mm;
+    margin-top: auto;
+    padding-top: 7mm;
+    border-top: 0.4mm solid currentColor;
+  }
+  .hat-qr-row img,
+  .hat-qr-row .qr-placeholder {
+    width: 42mm !important;
+    height: 42mm !important;
+    padding: 2mm;
+    background: white;
+    border-radius: 2mm;
+  }
+  .hat-qr-row strong {
+    display: block;
+    margin-bottom: 2mm;
+    font-family: Georgia, serif;
+    font-size: 17pt;
+  }
+  .hat-qr-row p {
+    max-width: 88mm;
+    margin: 0 0 3mm;
+    font-size: 9pt;
+    line-height: 1.5;
+    opacity: 0.9;
+  }
+  .hat-demo {
+    font-family: Arial, sans-serif;
+    font-size: 6.5pt;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+  }
+  .hat-wear {
+    display: flex;
+    align-items: center;
+    gap: 2.5mm;
+    margin: 8mm 0 0;
+    font-family: Arial, sans-serif;
+    font-size: 9pt;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+  .hat-wear svg {
+    width: 6mm;
+    height: 6mm;
+    flex: none;
+  }
+  .hat-url {
+    margin: 4mm 0 0;
+    font-family: Arial, sans-serif;
+    font-size: 7pt;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    opacity: 0.7;
+  }
+  .hat-fold {
+    padding: 0 2mm;
+  }
+  .hat-fold h3 {
+    margin: 0 0 1.5mm;
+    color: #4e5b52;
+    font-family: Arial, sans-serif;
+    font-size: 8.5pt;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .hat-fold ol {
+    margin: 0;
+    padding-left: 5mm;
+    columns: 2;
+    column-gap: 8mm;
+    color: #5f6a62;
+    font-family: Arial, sans-serif;
+    font-size: 7.5pt;
+    line-height: 1.45;
+  }
+  .hat-fold li {
+    break-inside: avoid;
+    margin-bottom: 1mm;
+  }
+}

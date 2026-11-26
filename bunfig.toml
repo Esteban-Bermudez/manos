@@ -1,0 +1,3 @@
+[install]
+# Keep the lockfile authoritative for this one-night demo.
+frozen-lockfile = true
