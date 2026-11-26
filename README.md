@@ -8,6 +8,12 @@ Built for AI Build Night #002 as a clickable prototype.
 
 **Live demo:** https://esteban-bermudez.github.io/manos/
 
+| Desk (manager) | Mano (helper) |
+|----------------|---------------|
+| ![Desk: manos list, online first](docs/screenshots/desk.png) | ![Mano: availability and rate](docs/screenshots/mano.png) |
+| **Hat** (printable) | **Tip** (after a hand) |
+| ![Hat: printable hat with QR and fold steps](docs/screenshots/hat.png) | ![Tip: receipt with Ko-fi QR](docs/screenshots/tip.png) |
+
 ## Why it exists
 
 At 1:55 p.m., a member's slides won't show in the workshop room. The
@@ -49,14 +55,6 @@ Fold instructions are on the same page.
 | Desk  | KWENCH manager  | List of manos, online first, then offline. Click a name to call them over. Each row shows skills and rate. |
 | Mano  | The helper      | Set I'm free / I'm busy, ping opt-in, skills, rate, Ko-fi link, complete a hand, and tip QR. |
 | Hat   | The helper      | Print your hat with name, QR, skill categories, and fold instructions. |
-
-### Screenshots
-
-| Desk (manager) | Mano (helper) |
-|----------------|---------------|
-| ![Desk: manos list, online first](docs/screenshots/desk.png) | ![Mano: availability and rate](docs/screenshots/mano.png) |
-| **Hat** (printable) | **Tip** (after a hand) |
-| ![Hat: printable hat with QR and fold steps](docs/screenshots/hat.png) | ![Tip: receipt with Ko-fi QR](docs/screenshots/tip.png) |
 
 ## Money
 
