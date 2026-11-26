@@ -52,9 +52,11 @@ Fold instructions are on the same page.
 
 ### Screenshots
 
-| Desk (manager) | Mano (helper) | Hat (printable) |
-|----------------|---------------|-----------------|
-| ![Desk](docs/screenshots/desk.png) | ![Mano](docs/screenshots/mano.png) | ![Hat](docs/screenshots/hat.png) |
+| Desk (manager) | Mano (helper) |
+|----------------|---------------|
+| ![Desk: manos list, online first](docs/screenshots/desk.png) | ![Mano: availability and rate](docs/screenshots/mano.png) |
+| **Hat** (printable) | **Tip** (after a hand) |
+| ![Hat: printable hat with QR and fold steps](docs/screenshots/hat.png) | ![Tip: receipt with Ko-fi QR](docs/screenshots/tip.png) |
 
 ## Money
 
