@@ -4,7 +4,9 @@ A help board for coworking spaces. Members who know how to help become
 **manos** (Spanish for "hand"). A front-desk manager like Morgan sees who is
 free right now and calls them over.
 
-Built for AI Build Night #002 as a clickable, local-only prototype.
+Built for AI Build Night #002 as a clickable prototype.
+
+**Live demo:** https://esteban-bermudez.github.io/manos/
 
 ## Why it exists
 
@@ -96,3 +98,7 @@ server.
 ## Status
 
 Prototype for a one-hour event. Not production software.
+
+## Support
+
+If this helped, you can [buy me a coffee on Ko-fi](https://ko-fi.com/estebanbermudez).
